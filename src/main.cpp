@@ -22,7 +22,7 @@ StaticTask_t xTaskBuffer;
 StackType_t xStack[STACK_SIZE];
 
 #define uS_TO_S_FACTOR 1000000 /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP 5        /* Time ESP32 will go to sleep (in seconds) */
+#define TIME_TO_SLEEP 1        /* Time ESP32 will go to sleep (in seconds) */
 
 BLEScan *pBLEScan;
 
@@ -140,8 +140,8 @@ void bleScan(void *parameter)
 
     if (onAir)
     {
-      // Wait for  bit
-      vTaskDelay(10000 / portTICK_PERIOD_MS);
+      // Wait for a bit
+      vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
     else
     {
